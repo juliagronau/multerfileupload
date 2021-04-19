@@ -49,10 +49,12 @@ app.post(
 );
 
 app.post("/upload-cat-pics", upload.array("cat_pics", 2), (req, res, next) => {
-  req.files.map(file => {
-    // use html template instead!
-    res.sendFile(`${__dirname}/public/${req.files.filename}`);
-  });
+  const { files } = req;
+  res.send(
+    `<div>You have uploaded these images: <br/> ${files.map(
+      file => `<img src="/${file.filename}" width="300" />`
+    )}</div>`
+  );
 });
 
 app.listen(port, () => console.log(`Server running in port: ${port}`));

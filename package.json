@@ -2,14 +2,18 @@
   "name": "multerfileupload",
   "version": "1.0.0",
   "description": "exercise on file uploading with multer",
-  "main": "index.js",
+  "main": "s3.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node s3.js"
   },
   "author": "julia",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.888.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "multer": "^1.4.2"
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0"
   }
 }
